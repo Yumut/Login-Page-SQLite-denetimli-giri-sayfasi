@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".uye_o"
+    android:background="@drawable/loginbackground"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kayıt Ol"
+            android:padding="48dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="48sp"
+            android:textColor="@color/white"
+
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="120dp"
+        android:padding="20dp">
+
+
+     <EditText
+         android:layout_width="350dp"
+         android:layout_height="60dp"
+         android:id="@+id/kayit_email"
+         android:background="@drawable/lavander_c"
+         android:hint="Email"
+         android:drawableLeft="@drawable/baseline_email_24"
+         android:drawablePadding="8dp"/>
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/kayit_sifre"
+            android:background="@drawable/lavander_c"
+            android:hint="Şifre"
+            android:drawableLeft="@drawable/baseline_password_24"
+            android:drawablePadding="8dp"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/kayit_onaysifre"
+            android:background="@drawable/lavander_c"
+            android:hint="Şifreyi Tekrar Giriniz"
+            android:drawableLeft="@drawable/baseline_password_24"
+            android:drawablePadding="8dp"
+            android:inputType="textPassword"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Kayıt Ol"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+
+            android:id="@+id/KayitButton"
+
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mesaj"
+            android:text="Zaten Kayıtlımısın ?  Giriş Yap"
+            android:padding="8dp"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
