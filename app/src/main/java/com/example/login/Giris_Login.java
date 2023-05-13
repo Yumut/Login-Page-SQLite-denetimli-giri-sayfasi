@@ -3,6 +3,7 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -21,6 +22,9 @@ public class Giris_Login extends AppCompatActivity {
         binding= ActivityGirisLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
+
         Mydb = new DB(this);
         binding.GirisButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,8 +39,14 @@ public class Giris_Login extends AppCompatActivity {
                     Boolean kontrol = Mydb.kontrolsifreemail(email,password);
                     if(kontrol == true){
 
+
+
                         Toast.makeText(Giris_Login.this,"Başarılı Giriş",Toast.LENGTH_SHORT).show();
+
                         Intent intent =new Intent(getApplicationContext(),MainActivity.class);
+                        Intent intent2 = new Intent(Giris_Login.this, sayfa2.class);
+                        intent2.putExtra("veri", binding.girisEmail.getText().toString());
+                        startActivity(intent2);
                         startActivity(intent);
                     }else{
 
@@ -49,12 +59,21 @@ public class Giris_Login extends AppCompatActivity {
             }
         });
 
-        binding.mesajuyeol.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        binding.KayitOlButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(getApplicationContext(),uye_o.class);
                 startActivity(intent);
             }
         });
+
     }
+
+
+
+
 }

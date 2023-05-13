@@ -20,6 +20,7 @@
             android:text="Kayıt Ol"
             android:padding="48dp"
             android:gravity="center"
+            android:id="@+id/kayittext"
             android:textStyle="bold"
             android:textSize="48sp"
             android:textColor="@color/white"
@@ -69,17 +70,20 @@
 
                 />
 
-
-            <TextView
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/mesajuyeol"
-                android:text="Üye Değilmisin ?  Üye Ol"
-                android:padding="8dp"
-                android:layout_gravity="center"
-                android:textSize="18sp"
-                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:text="Kayıt Ol"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+
+                android:id="@+id/KayitOlButton"
+
                 />
+
+
+
 
 
 

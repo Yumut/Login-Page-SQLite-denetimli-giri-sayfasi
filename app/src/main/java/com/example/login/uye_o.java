@@ -42,7 +42,7 @@ public class uye_o extends AppCompatActivity {
                         Boolean kontrolemail= Mydb.kontrolEmail(email);
 
                        if(kontrolemail==false){
-                           Boolean insert =  Mydb.insertData(email,password);
+                           Boolean insert =  Mydb.verikayit(email,password);
 
                          if(insert ==true){
 
@@ -71,12 +71,15 @@ public class uye_o extends AppCompatActivity {
             }
         });
 
-        binding.mesaj.setOnClickListener(new View.OnClickListener() {
+        binding.GirisYapKayitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),Giris_Login.class);
                 startActivity(intent);
             }
         });
+
+
+
     }
 }

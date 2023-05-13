@@ -29,7 +29,7 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
-    public Boolean insertData(String email, String password){
+    public Boolean verikayit(String email, String password){
 
     SQLiteDatabase Mydb = this.getWritableDatabase();
     ContentValues contentValues = new ContentValues();
@@ -39,16 +39,17 @@ public class DB extends SQLiteOpenHelper {
     if(result == -1 ){
 
         return  false;
+    }
+    else{
 
-    }else{
         return true;
     }
-
-
     }
-    public Boolean kontrolEmail(String email){
-    SQLiteDatabase Mydb= this.getWritableDatabase();
-    Cursor cursor = Mydb.rawQuery("Select * from uyeler where email =?",new String[]{email});
+
+
+    public Boolean kontrolsifreemail( String email, String password ){
+        SQLiteDatabase Mydb= this.getWritableDatabase();
+        Cursor cursor = Mydb.rawQuery("Select * from uyeler where email = ? and password = ? ",new String[]{email,password});
 
         if(cursor.getCount()>0){
             return true;
@@ -58,9 +59,9 @@ public class DB extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean kontrolsifreemail( String email, String password ){
+    public Boolean kontrolEmail(String email){
         SQLiteDatabase Mydb= this.getWritableDatabase();
-        Cursor cursor = Mydb.rawQuery("Select * from uyeler where email = ? and password = ? ",new String[]{email,password});
+        Cursor cursor = Mydb.rawQuery("Select * from uyeler where email =?",new String[]{email});
 
         if(cursor.getCount()>0){
             return true;

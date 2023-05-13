@@ -2,39 +2,45 @@ package com.example.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.login.databinding.ActivityGirisLoginBinding;
+import com.example.login.databinding.ActivitySayfa2Binding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class sayfa2 extends AppCompatActivity{
     BottomNavigationView navmenu;
+    Button kapa;
+    TextView usertext;
 
-    private ArrayList<photo> photostarih;
-    RecyclerView sayfa2akis;
-    private adaptor adaptor;
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        setContentView(R.layout.activity_sayfa2);
         navmenu=findViewById(R.id.navmenu);
-        sayfa2akis=findViewById(R.id.sayfa2akis);
-        photostarih = new ArrayList<>();
-        adaptor= new adaptor(photostarih);
-        sayfa2akis.setAdapter(adaptor);
-        sayfa2akis.setLayoutManager(new LinearLayoutManager(this));
-        diziolustur();
-        adaptor.notifyDataSetChanged();
+        usertext=findViewById(R.id.user);
+        kapa= (Button)findViewById(R.id.cikisButton);
+        String gelenYazi=getIntent().getExtras().getString("veri");
+        usertext.setText("Merhaba"+" "+gelenYazi+" " +"Profil Sayfanıza Hoşgeldiniz");
+
+
+
+        kapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
         navmenu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -63,14 +69,5 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-    }
-
-    private void diziolustur() {
-
-        photostarih.add(new photo(R.drawable.ayasofya,"Topkapı Sarayı"," İstanbulda bulunan tarihi yer"));
-        photostarih.add(new photo(R.drawable.kiz,"Kız Kulesi","İstanbulda bulunan tarihi yer"));
-        photostarih.add(new photo(R.drawable.kolezyum,"Kolezyum","Romada bulunan tarihi yer"));
-        photostarih.add(new photo(R.drawable.trevi,"Trevi Çeşmesi","Romada bulunan tarihi yer"));
     }
 }

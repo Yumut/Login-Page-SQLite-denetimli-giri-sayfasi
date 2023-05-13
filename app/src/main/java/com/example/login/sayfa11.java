@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,26 +14,24 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    BottomNavigationView navmenu;
-
-    private ArrayList<photo> photostarih;
-    RecyclerView sayfa2akis;
+public class sayfa11 extends AppCompatActivity {
+    private RecyclerView sayfa1akis;
+    private ArrayList<photo> photos;
     private adaptor adaptor;
-
-    @SuppressLint("MissingInflatedId")
+    BottomNavigationView navmenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sayfa11);
+        sayfa1akis= findViewById(R.id.sayfa1akis);
         navmenu=findViewById(R.id.navmenu);
-        sayfa2akis=findViewById(R.id.sayfa2akis);
-        photostarih = new ArrayList<>();
-        adaptor= new adaptor(photostarih);
-        sayfa2akis.setAdapter(adaptor);
-        sayfa2akis.setLayoutManager(new LinearLayoutManager(this));
+        photos = new ArrayList<>();
+        adaptor= new adaptor(photos);
+        sayfa1akis.setAdapter(adaptor);
+        sayfa1akis.setLayoutManager(new LinearLayoutManager(this));
         diziolustur();
         adaptor.notifyDataSetChanged();
+
 
         navmenu.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -63,14 +60,15 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
     private void diziolustur() {
 
-        photostarih.add(new photo(R.drawable.ayasofya,"Topkapı Sarayı"," İstanbulda bulunan tarihi yer"));
-        photostarih.add(new photo(R.drawable.kiz,"Kız Kulesi","İstanbulda bulunan tarihi yer"));
-        photostarih.add(new photo(R.drawable.kolezyum,"Kolezyum","Romada bulunan tarihi yer"));
-        photostarih.add(new photo(R.drawable.trevi,"Trevi Çeşmesi","Romada bulunan tarihi yer"));
+        photos.add(new photo(R.drawable.hogwarts,"Hogwarts"," Haryy Potter Evrenindeki Büyücülük okulu"));
+        photos.add(new photo(R.drawable.kasaba,"Bikini Kasabası","Süngerbob evreninde bulunan mekan"));
+        photos.add(new photo(R.drawable.charlie,"Çikolata Fabrikası","Charlie'nin Çikolata Fabrikası evrenindeki çikolatadan oluşan fabrika"));
+        photos.add(new photo(R.drawable.gameof,"Kralın Şehri"," Game of Thrones evrenindeki bir şehir "));
+
+
     }
 }

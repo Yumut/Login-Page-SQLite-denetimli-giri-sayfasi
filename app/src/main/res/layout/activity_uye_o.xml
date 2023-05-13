@@ -79,17 +79,20 @@
 
             />
 
-
-        <TextView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/mesaj"
-            android:text="Zaten Kayıtlımısın ?  Giriş Yap"
-            android:padding="8dp"
-            android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:text="Giriş Yap"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+
+            android:id="@+id/GirisYapKayitButton"
+
             />
+
+
+
 
 
 

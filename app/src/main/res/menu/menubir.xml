@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Tarihi"
+        android:id="@+id/tarihisayfa"
+        android:icon="@drawable/tarihi"
+
+
+        />
+    <item android:title="Kurgu"
+        android:id="@+id/kurgusayfa"
+        android:icon="@drawable/kurgu"
+        />
+    <item android:title="Profil"
+        android:id="@+id/profilsayfa"
+        android:icon="@drawable/profil"
+        />
+</menu>
